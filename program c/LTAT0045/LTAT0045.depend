@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1538538564 source:d:\program c\ltat0045\main.c
+	<stdio.h>
+	<limits.h>
+	<stdlib.h>
+	<string.h>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1538249447 source:d:\program c\test\main.cpp
+	<iostream>
+	<regex>
+	<string>
+

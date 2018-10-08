@@ -1,0 +1,408 @@
+LTAT0005 - 9-digits Telephone number
+Khi các chuỗi dữ liệu được truyền vào các chương trình, chúng có thể chứa các kí tự đặc biệt có thể kích hoạt các lệnh hoặc các hành động không mong muốn, điều này dẫn đến các lỗ hổng phần mềm. Vì vậy việc kiểm tra dữ liệu đầu vào trước khi sử dụng chúng là 1 việc vô cùng cần thiết. Hãy viết chương trình kiểm tra xem chuỗi nhập vào có phải là số điện thoại di động 10 số dạng 09xx.xxx.xxx hay không ( x là các chữ số từ 0 đến 9).
+
+#include<iostream>
+#include <regex>
+#include <string>
+
+using namespace std;
+
+int main(){
+
+    regex phone10("\\b09[[:digit:]]{2}\\.[[:digit:]]{3}\\.[[:digit:]]{3}\\b");
+    int count;
+    cin >> count;
+    cin.ignore();
+    for(int i = 0; i < count; i++){
+    	string st;
+	    getline(cin, st);
+	    if(regex_match(st, phone10))
+		    cout << "Valid!" << endl;
+		else
+		    cout <<"Invalid!" <<endl;
+   
+    }
+	return 0;
+}
+
+################################################
+
+LTAT0006 - 11-digits Telephone Number
+Hãy viết chương trình kiểm tra xem chuỗi nhập vào có phải là số điện thoại di động 11 số dạng 01xxxxxxxxx hay không ( x là các chữ số từ 0 đến 9).
+#include<iostream>
+#include <regex>
+#include <string>
+
+using namespace std;
+
+int main(){
+
+    regex phone11("\\b01[[:digit:]]{9}\\b");
+    int count;
+    cin >> count;
+    cin.ignore();
+    for(int i = 0; i < count; i++){
+    	string st;
+	    getline(cin, st);
+	    if(regex_match(st, phone11))
+		    cout << "Valid!" << endl;
+		else
+		    cout <<"Invalid!" <<endl;
+   
+    }
+	return 0;
+}
+
+###############################################
+LTAT0007 - Telephone number in International Format
+Hãy viết chương trình kiểm tra xem chuỗi nhập vào có phải là số điện thoại di động 11 số dạng +841.xxx.xxx.xxx hay không ( x là các chữ số từ 0 đến 9).
+
+#include<iostream>
+#include <regex>
+#include <string>
+
+using namespace std;
+
+int main(){
+
+    regex phone11("\\+841\\.[[:digit:]]{3}\\.[[:digit:]]{3}\\.[[:digit:]]{3}");
+    int count;
+    cin >> count;
+    cin.ignore();
+    for(int i = 0; i < count; i++){
+    	string st;
+	    getline(cin, st);
+	    if(regex_match(st, phone11))
+		    cout << "Valid!" << endl;
+		else
+		    cout <<"Invalid!" <<endl;
+   
+    }
+	return 0;
+}
+
+############################
+LTAT0008 - Dual Format Telephone Number
+Khi các chuỗi dữ liệu được truyền vào các chương trình, chúng có thể chứa các kí tự đặc biệt có thể kích hoạt các lệnh hoặc các hành động không mong muốn, điều này dẫn đến các lỗ hổng phần mềm. Vì vậy việc kiểm tra dữ liệu đầu vào trước khi sử dụng chúng là 1 việc vô cùng cần thiết. Hãy viết chương trình kiểm tra xem chuỗi nhập vào có phải là số điện thoại di động 11 số dạng số dạng 01xxxxxxxxx hoặc +841xxxxxxxxx hay không ( x là các chữ số từ 0 đến 9).
+
+#include<iostream>
+#include <regex>
+#include <string>
+
+using namespace std;
+
+int main(){
+
+    regex phone11("(\\+841|01)[[:digit:]]{9}");
+    int count;
+    cin >> count;
+    cin.ignore();
+    for(int i = 0; i < count; i++){
+    	string st;
+	    getline(cin, st);
+	    if(regex_match(st, phone11))
+		    cout << "Valid!" << endl;
+		else
+		    cout <<"Invalid!" <<endl;
+   
+    }
+	return 0;
+}
+
+####################################
+LTAT0009 - Numeric String
+Khi các chuỗi dữ liệu được truyền vào các chương trình, chúng có thể chứa các kí tự đặc biệt có thể kích hoạt các lệnh hoặc các hành động không mong muốn, điều này dẫn đến các lỗ hổng phần mềm. Vì vậy việc kiểm tra dữ liệu đầu vào trước khi sử dụng chúng là 1 việc vô cùng cần thiết.
+Hãy viết chương trình kiểm tra chuỗi nhập vào có phải chỉ gồm các chữ số hay không.
+
+#include <iostream>
+#include <regex>
+#include <string>
+using namespace std;
+int main()
+{
+    regex phone10("\\d+");
+    unsigned int count;
+    cin >> count;
+    string st;
+    cin.ignore();
+    for(int i = 0; i < count; i++){
+       getline(cin, st);
+        if(regex_match(st, phone10)){
+            cout <<"Valid!" <<endl;
+        }else{
+            cout <<"Invalid!" <<endl;
+        }
+    }
+    return 0;
+}
+
+
+###########################
+LTAT0010 - Numeric String Without Leading Zeros
+Khi các chuỗi dữ liệu được truyền vào các chương trình, chúng có thể chứa các kí tự đặc biệt có thể kích hoạt các lệnh hoặc các hành động không mong muốn, điều này dẫn đến các lỗ hổng phần mềm. Vì vậy việc kiểm tra dữ liệu đầu vào trước khi sử dụng chúng là 1 việc vô cùng cần thiết.
+Hãy viết chương trình kiểm tra xem chuỗi nhập vào có phải chỉ gồm các chữ số và không bắt đầu bằng chữ số 0 hay không.
+
+#include <iostream>
+#include <regex>
+#include <string>
+using namespace std;
+int main()
+{
+    regex phone10("[1-9]+\\d*");
+    unsigned int count;
+    cin >> count;
+    string st;
+    cin.ignore();
+    for(int i = 0; i < count; i++){
+       getline(cin, st);
+        if(regex_match(st, phone10)){
+            cout <<"Valid!" <<endl;
+        }else{
+            cout <<"Invalid!" <<endl;
+        }
+    }
+    return 0;
+}
+
+#############################
+LTAT0011 - Integer Numbers
+Khi các chuỗi dữ liệu được truyền vào các chương trình, chúng có thể chứa các kí tự đặc biệt có thể kích hoạt các lệnh hoặc các hành động không mong muốn, điều này dẫn đến các lỗ hổng phần mềm. Vì vậy việc kiểm tra dữ liệu đầu vào trước khi sử dụng chúng là 1 việc vô cùng cần thiết.
+Hãy viết chương trình kiểm tra chuỗi nhập vào có phải là một số nguyên (âm hoặc dương) hay không ( phần số không bắt đầu bằng chữ số 0).
+
+#include <iostream>
+#include <regex>
+#include <string>
+using namespace std;
+int main()
+{
+    regex phone10("(\\+|-)?[1-9]\\d*");
+    unsigned int count;
+    cin >> count;
+    string st;
+    cin.ignore();
+    for(int i = 0; i < count; i++){
+       getline(cin, st);
+        if(regex_match(st, phone10)){
+            cout <<"Valid!" <<endl;
+        }else{
+            cout <<"Invalid!" <<endl;
+        }
+    }
+    return 0;
+}
+
+####################
+LTAT0012 - Alphabet Strings
+Khi các chuỗi dữ liệu được truyền vào các chương trình, chúng có thể chứa các kí tự đặc biệt có thể kích hoạt các lệnh hoặc các hành động không mong muốn, điều này dẫn đến các lỗ hổng phần mềm. Vì vậy việc kiểm tra dữ liệu đầu vào trước khi sử dụng chúng là 1 việc vô cùng cần thiết.
+Hãy viết chương trình kiểm tra xem chuỗi nhập vào chỉ gồm chữ cái (in hoa hoặc in thường) và dấu cách hay không.
+
+#include <iostream>
+#include <regex>
+#include <string>
+using namespace std;
+int main()
+{
+    regex phone10("[a-zA-Z\\s]*");
+    unsigned int count;
+    cin >> count;
+    string st;
+    cin.ignore();
+    cout <<endl;
+    for(int i = 0; i < count; i++){
+       getline(cin, st);
+        if(regex_match(st, phone10)){
+            cout <<"Valid!" <<endl;
+        }else{
+            cout <<"Invalid!"<<endl;
+        }
+    }
+    
+    return 0;
+}
+
+########################
+LTAT0013 - Alpha-numberic Strings With Limited Length
+Khi các chuỗi dữ liệu được truyền vào các chương trình, chúng có thể chứa các kí tự đặc biệt có thể kích hoạt các lệnh hoặc các hành động không mong muốn, điều này dẫn đến các lỗ hổng phần mềm. Vì vậy việc kiểm tra dữ liệu đầu vào trước khi sử dụng chúng là 1 việc vô cùng cần thiết.
+Hãy viết chương trình kiểm tra xem chuỗi nhập vào có phải chỉ gồm các chữ cái in thường và chữ số, và độ dài từ 6 đến 20 ký tự hay không (ứng dụng kiểm tra username hợp lệ).
+
+#include <iostream>
+#include <regex>
+#include <string>
+using namespace std;
+int main()
+{
+    regex phone10("[a-z0-9]{6,20}");
+    unsigned int count;
+    cin >> count;
+    string st;
+    cin.ignore();
+    cout <<endl;
+    for(int i = 0; i < count; i++){
+       getline(cin, st);
+        if(regex_match(st, phone10)){
+            cout <<"Valid!" <<endl;
+        }else{
+            cout <<"Invalid!"<<endl;
+        }
+    }
+    
+    return 0;
+}
+
+#################################
+LTAT0019 - List phone numbers
+Việc tìm kiếm một dữ liệu cụ thể trong một tập dữ liệu phức tạp là điều khó khăn và mất thời gian khi làm thủ công. Regular Expressions hay còn được gọi với cái tên ngắn gọn là Regex là một trong những công cụ mạnh mẽ nhất và được áp dụng rộng rãi nhất trong việc lập trình. Trong đó có việc sử dụng regex để tìm kiếm các chuỗi thông tin như số điện thoại, email, địa chỉ website thường được áp dụng trong các công cụ crawler. Hãy viết một chương trình liệt kê tất cả các số điện thoại có trong chuỗi nhập vào và chỉ ra vị trí xuất hiện của các số đó (số điện thoại có dạng 10 số hoặc 11 số và bắt đầu bằng số 0)
+
+#include <iostream>
+#include <regex>
+#include <string>
+using namespace std;
+int main()
+{
+    regex phone10("0[0-9]{9,10}");
+    
+    unsigned int count;
+    cin >> count;
+    string st;
+    cin.ignore();
+    
+    for (int i = 1; i <= count; i++ ){
+        cout << i <<endl;
+        getline(cin, st);
+        sregex_token_iterator pos(st.cbegin(),st.cend(), // sequence
+                              phone10,               // token separator
+                              0);
+        sregex_token_iterator end;
+        for ( ; pos!=end ; ++pos ) {
+            cout << "Found  " << pos->str() << " at " << pos->first - st.cbegin() << endl;
+        }
+    }
+    
+    cout << endl;
+    return 0;
+}
+
+######################################
+LTAT003LTAT003 - Modify Telephone Numbers
+Thực hiện chủ trương nhằm quy hoạch lại kho số di động của Bộ Thông tin & Truyền thông cũng như Đảng và Nhà nước đưa ra. Toàn bộ thuê bao di động 11 số tại Việt Nam sẽ phải đổi đầu số để trở thành thuê bao 10 số. Việc chuyển đổi nhằm thống nhất định dạng số điện thoại di động ở Việt Nam ở cùng mức 10 chữ số. Hãy viết chương trình kiểm tra dữ liệu nhập vào có phải số điện thoại 11 số bắt đầu bằng 012 không và chuyển đổi các đầu số 11 số cũ của nhà mạng Vinaphone sang đầu số 10 số mới. 
+- Đầu số 0123 -> 083 
+- Đầu số 0124 -> 084 
+- Đầu số 0125 -> 085 
+- Đầu số 0127 -> 081 
+- Đầu số 0129 -> 082
+
+#include <iostream>
+#include <regex>
+#include <string>
+using namespace std;
+int main()
+{
+
+  regex phone11("012(3|4|5|7|9)\\d{7}");
+  regex phone08x("\\b012(3|4|5|7|9)");
+  unsigned int count;
+  cin >> count;
+  string st,found, change;
+  cin.ignore();
+  for(int i = 1; i <= count; i++){
+    cout <<i<<endl;
+    getline(cin,st);
+    sregex_token_iterator pos(st.cbegin(), st.cend(), phone11, 0);
+    sregex_token_iterator end;
+    for(;pos!=end;++pos){
+    found = pos->str();
+    char ax = found.at(3);
+    switch(ax){
+      case '3':
+      {
+        change = regex_replace(found,phone08x,"083");
+        break;
+      }
+      case '4':
+      {
+        change = regex_replace(found,phone08x,"084");
+        break;
+      }
+      case '5':
+      {
+        change = regex_replace(found,phone08x,"085");
+        break;
+      }
+      case '7':
+      {
+        change = regex_replace(found,phone08x,"081");
+        break;
+      }
+      case '9':
+      {
+        change = regex_replace(found,phone08x,"082");
+        break;
+      }
+    }
+    cout << "Thay doi: "<<change <<endl;
+    }
+  }
+    return 0;
+}
+
+#################################
+LTAT0041 - Bound Checking for a Sum
+Cho hai số nguyên không âm kiểu unsigned int. Hãy kiểm tra xem tổng hai số có nằm trong phạm vi biểu diễn của kiểu unsigned int hay không.
+
+#include <stdio.h>
+ 
+int main(void) {
+    unsigned int max = 4294967295;
+    unsigned int a,b;
+    scanf("%u%u",&a,&b);
+    if(max-a>=b)
+    	printf("Yes");
+    else
+    	printf("No");
+	return 0;
+}
+
+#########################
+LTAT0042 - Bound Checking for a Product
+Cho hai số nguyên không âm kiểu unsigned int. Hãy kiểm tra xem tích của hai số có nằm trong phạm vi biểu diễn của kiểu unsigned int hay không.
+#include<stdio.h>
+#include<limits.h>
+ 
+int main(void) {
+    unsigned int max = UINT_MAX;
+    unsigned int a,b;
+    scanf("%u%u",&a,&b);
+    if(a==0||b==0)
+    	printf("Yes");
+    else if((max/a) >= b)
+    		printf("Yes");
+    	else
+    		printf("No");
+    return 0;
+}
+
+########################
+LTAT0043 - Bound Checking for a Signed Sum
+Cho hai số nguyên kiểu int. Hãy kiểm tra xem tổng hai số có nằm trong phạm vi biểu diễn của kiểu int hay không.
+#include<stdio.h>
+#include<limits.h>
+ 
+int main(void) {
+    int max = INT_MAX;
+    int min = INT_MIN;
+    int a,b;
+    scanf("%d%d",&a,&b);
+    if(a>0 && b>0){
+    	if(max-a >= b)
+    		printf("Yes");
+    	else
+    		printf("No");
+    }else if(a < 0 && b < 0){
+    		if(min-a <= b)
+    			printf("Yes");
+    		else
+    			printf("No");
+    	}else
+    		printf("Yes");
+    return 0;
+}

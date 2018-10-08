@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1538392155 source:d:\program c\ltat0024\main.cpp
+	<iostream>
+	<regex>
+	<string>
+
