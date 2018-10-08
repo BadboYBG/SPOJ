@@ -1,2 +1,2 @@
 # thedi
-thoi ky
+CUỘC SỐNG MÀ!
